@@ -1,4 +1,4 @@
-## LAUNCHING PYTHON DATAFLOW PIPELINES USING:
+## LAUNCHING PYTHON DATAFLOW PIPELINES USING ([following official tutorial here](https://beam.apache.org/documentation/sdks/python-pipeline-dependencies/#multiple-file-dependencies):
 ### 1. PyPI dependencies with requirement files. Bear in mind that [many dependencies are already pre-installed](https://cloud.google.com/dataflow/docs/concepts/sdk-worker-dependencies)
 ### 2. Local or Non-PyPI dependencies
 ### 3. Multi File Dependencies
