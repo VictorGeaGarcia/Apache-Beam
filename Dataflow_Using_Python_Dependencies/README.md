@@ -134,4 +134,7 @@ This means your non-PyPI packages have been successfully installed. Now you can 
 gcloud pubsub topics publish pubsub-bq-topic --message "[{'case_id':313,'post':'aasdfsfca','comment':True}]"
 ```
 
+# CLEAN-UP
 
+To avoid incurring charges to your GCP account for the resources used in this tutorial, don't forget to delete all the resources created:
+- Dataflow pipelines, PubSub topic, BigQuery table and dataset, GCS bucket.
