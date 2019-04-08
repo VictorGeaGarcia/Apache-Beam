@@ -31,17 +31,8 @@ def run(argv=None):
                         dest='project_id',
                         help='Project ID')
     known_args, pipeline_args = parser.parse_known_args(argv)
-    pipeline_args.extend(['--project=main-training-project'])
-    """
-    pipeline_args.extend(['--runner=DataflowRunner',
-                             '--project=yourprojectid',
-                             '--staging_location=gs://yourgsbucket',
-                             '--temp_location=gs://yourgsbucket',
-                         '--job_name=your-job-name'])
-    """
+    pipeline_args.extend(['--project=<your-project>'])
     pipeline_options = PipelineOptions(pipeline_args)
-    #pipeline_options.view_as(SetupOptions).save_main_session = True
-    
 
     with beam.Pipeline(options = pipeline_options) as p:
         lines = p | ReadFromPubSub(topic=known_args.input_topic)

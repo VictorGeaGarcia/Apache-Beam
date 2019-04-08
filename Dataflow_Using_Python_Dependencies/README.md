@@ -49,7 +49,7 @@ using our installed Pandas package and finally writing to BQ.
 
 Run the pipeline with the following command:
 ```bash
-export GCS_BUCKET=billing-bucket-vgea
+export GCS_BUCKET=<your-gcs-bucket>
 export JOB_NAME=pubstobqreq-only-pandas 
 python pubsub_input_bq_output_pipy_dep.py --job_name=${JOB_NAME} --requirements_file=requirements.txt --runner=DataflowRunner --temp_location=gs://${GCS_BUCKET}/temp --streaming --input_topic projects/${PROJECT}/topics/${TOPIC} --table=${TABLE} --dataset=${DATASET} --project_id=${PROJECT} 
 ```
@@ -97,7 +97,7 @@ python pubsub_input_bq_output_non_pipy_dep.py --job_name=${JOB_NAME} --extra_pac
 If you check the logs you will eventually see some logging like:
 
 ```python
-Downloading: gs://billing-bucket-vgea/temp/pubstobqreq-non-pypi.1554717408.856450/nonpypimodule2-0.0.0.tar.gz to /var/opt/google/tmp/download.0.641644710/file.0 (size: 0 Kb, MD5: Ou48TOCEfsG7KubvEVZHiw==)
+Downloading: gs://<your-bucket>/temp/pubstobqreq-non-pypi.1554717408.856450/nonpypimodule2-0.0.0.tar.gz to /var/opt/google/tmp/download.0.641644710/file.0 (size: 0 Kb, MD5: Ou48TOCEfsG7KubvEVZHiw==)
 Installing extra package: nonpypimodule2-0.0.0.tar.gz
 Building wheel for nonpypimodule2 (setup.py): started
 Successfully installed nonpypimodule2-0.0.0
